@@ -137,24 +137,31 @@ function proximaPalavra() {
     criarTabuleiro();
 }
 
-// Criar um input oculto para capturar toques no celular
+// Criar um input de texto pequeno para capturar toques no celular
 const inputHidden = document.createElement('input');
 inputHidden.type = 'text';
 inputHidden.style.position = 'absolute';
-inputHidden.style.opacity = 0;
-inputHidden.style.pointerEvents = 'none';
+inputHidden.style.opacity = '0';
+inputHidden.style.width = '1px';
+inputHidden.style.height = '1px';
+inputHidden.style.border = 'none';
+inputHidden.style.outline = 'none';
+inputHidden.style.zIndex = '-1';
 document.body.appendChild(inputHidden);
 
-// Ativar o input quando uma letra for tocada
-function ativarTecladoMovel() {
-    inputHidden.focus();
+// Função para ativar o teclado virtual no celular
+function ativarTecladoMovel(letra) {
+    inputHidden.style.left = `${letra.getBoundingClientRect().left}px`;
+    inputHidden.style.top = `${letra.getBoundingClientRect().top}px`;
+    inputHidden.value = ''; // Limpa qualquer valor anterior
+    inputHidden.focus(); // Abre o teclado no celular
 }
 
 // Adicionar evento de toque para ativar o teclado no celular
-elemPalavra.addEventListener('click', function (event) {
+document.addEventListener('click', function (event) {
     if (event.target.classList.contains('letra')) {
         elemLetra = event.target;
-        ativarTecladoMovel();
+        ativarTecladoMovel(elemLetra);
     }
 });
 
