@@ -1,0 +1,60 @@
+body {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 1000px;
+    background-color: #fff;
+    font-family: 'Edu NSW ACT Foundation', cursive;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+header,
+footer {
+    padding: 10px;
+}
+
+#tabuleiro {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: rgb(238, 15, 15);
+
+}
+
+.palavra {
+    display: flex;
+    gap: 10px;
+}
+
+.letra {
+    background-color: rgb(59, 99, 173);
+    width: 35px;
+    height: 35px;
+    border-radius: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.letra-existe {
+    background-color: rgb(228, 5, 5);
+}
+
+.letra-inexistente {
+    background-color: rgb(228, 5, 5);
+}
+
+.letra-correta {
+    background-color: rgb(228, 5, 5);
+}
+#cursor-letra {
+    border-width: 2px;
+    border-style: double;
+    box-sizing: border-box;
+}
