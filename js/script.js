@@ -137,5 +137,36 @@ function proximaPalavra() {
     criarTabuleiro();
 }
 
+// Criar um input oculto para capturar toques no celular
+const inputHidden = document.createElement('input');
+inputHidden.type = 'text';
+inputHidden.style.position = 'absolute';
+inputHidden.style.opacity = 0;
+inputHidden.style.pointerEvents = 'none';
+document.body.appendChild(inputHidden);
+
+// Ativar o input quando uma letra for tocada
+function ativarTecladoMovel() {
+    inputHidden.focus();
+}
+
+// Adicionar evento de toque para ativar o teclado no celular
+elemPalavra.addEventListener('click', function (event) {
+    if (event.target.classList.contains('letra')) {
+        elemLetra = event.target;
+        ativarTecladoMovel();
+    }
+});
+
+// Capturar entrada do teclado virtual
+inputHidden.addEventListener('input', function () {
+    if (elemLetra && elemLetra !== elemPalavra.lastChild) {
+        elemLetra.textContent = inputHidden.value.toUpperCase();
+        inputHidden.value = ''; // Limpa o campo após digitar
+        elemLetra = elemLetra.nextSibling || elemLetra;
+    }
+});
+
+
 // Inicia o jogo
 criarTabuleiro();
