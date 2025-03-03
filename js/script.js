@@ -139,7 +139,7 @@ function proximaPalavra() {
     criarTabuleiro();
 }
 
-// Adiciona uma div com a dica correta
+//
 const elemDica = document.createElement('div');
 elemDica.id = 'dica';
 elemDica.className = 'dica-palavra';
