@@ -19,6 +19,8 @@ const elemGame = document.querySelector('#game');
 let elemPalavra; // Variável global
 let elemLetra;   // Variável global
 
+
+
 // Função para criar o tabuleiro
 function criarTabuleiro() {
     elemGame.innerHTML = ''; // Limpa o jogo anterior
@@ -136,6 +138,16 @@ function proximaPalavra() {
     tentativasRestantes = 3;
     criarTabuleiro();
 }
+
+// Adiciona uma div com a dica correta
+const elemDica = document.createElement('div');
+elemDica.id = 'dica';
+elemDica.className = 'dica-palavra';
+elemDica.textContent = `Dica: ${dicas[segredo] || 'Descubra a palavra secreta!'}`;
+elemDica.style.marginTop = '20px'; // Adiciona espaçamento
+
+elemGame.append(elemDica);
+
 
 // Criar um input de texto pequeno para capturar toques no celular
 const inputHidden = document.createElement('input');
