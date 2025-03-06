@@ -15,7 +15,6 @@ body {
     height: 100px;
     border-radius: 40px;
     font-size: calc(20px);
-    background-color: white;
     text-align: center;
 }
 
@@ -88,7 +87,7 @@ body {
 }
 
 .letra {
-    background-color: rgb(104, 104, 99);
+    background-color: rgb(7, 7, 7);
     width: 35px;
     height: 35px;
     border-radius: 10%;
