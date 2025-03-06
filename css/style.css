@@ -30,7 +30,7 @@ body {
 #dica {
     margin-top: 40px;
     font-size: 18px;
-    color: #080808;
+    font-size: calc(10px);
 }
 
 .footer1 {
